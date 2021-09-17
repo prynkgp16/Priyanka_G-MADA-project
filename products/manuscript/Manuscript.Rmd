@@ -15,23 +15,78 @@ bibliography: ../references.bib
 csl: ../apa.csl
 ---
 
-The structure below is a possible setup for a data analysis project (including the course project). For a manuscript, adjust as needed.
+
+
+```{r}
+
+
+
+#Loading required packages
+library(dplyr) #for data processing
+library(here) #to set paths
+library(tidyverse) #all required data manipulation packages
+
+```
 
 
 # Summary/Abstract
 _Write a summary of your project._
 
 
-# Introduction 
+# KEY QUESTIONS 
+
+What is already known about this subject?
+
+Residents of rural communities are at increased risk for severe COVID-19–associated morbidity and mortality. In September 2020, COVID-19 incidence (cases per 100,000 population) in rural counties surpassed that in urban counties.
+
+What will this study add or answer?
+
+The present analysis will attempt to estimate the percent of the population in each county that may be vaccine hesitant
+
+Relationship between ethnicity and  vaccine hesitancy 
+
+How might this impact clinical practice?
+
+Identify and address barriers to COVID-19 vaccination in rural areas.
+
 
 ## General Background Information
-_Provide enough background on your topic that others can understand the why and how of your analysis_ 
+
+Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Coronavirus disease 2019 (COVID-19) was declared a pandemic in March 2020. COVID-19 vaccine is the most sustainable option to manage the current pandemic. However, vaccine hesitancy by even a small subset of the population can undermine the success of this strategy. 
+
+
 
 ## Description of data and data source
 _Describe what the data is, what it contains, where it is from, etc. Eventually this might be part of a methods section._
 
+The dataset used for this analysis is publicly available on CDC website. https://data.cdc.gov/Vaccinations/Vaccine-Hesitancy-for-COVID-19-County-and-local-es/q9mh-h2tw
+
+The hesitancy rates at the county level using the Public Use Microdata Sample (PUMS). The data was collected by utilizing survey question, 
+“Once a vaccine to prevent COVID-19 is available to you, would you…get a vaccine?”, which provides the following options:
+
+1) “definitely get a vaccine”;
+2) “probably get a vaccine”; 
+3) “unsure”; 4) “probably not get a vaccine”; 
+5) “definitely not get a vaccine.” 
+
+We use three definitions to capture the strength of hesitancy to receive a vaccine.
+
+Strongly hesitant: includes only survey responses indicating that they would “definitely not” receive a COVID-19 vaccine when available.
+
+Hesitant: includes survey responses indicating that they would “probably not” or “definitely not” receive a COVID-19 vaccine when available.
+
+Hesitant or unsure: includes survey responses indicating that they would “probably not” or “unsure” or “definitely not” receive a COVID-19 vaccine when available
+
 ## Questions/Hypotheses to be addressed
 _State the research questions you plan to answer with this analysis._
+
+The present analysis will attempt to estimate the percent of the population in each county that may be vaccine hesitant
+
+Relationship between ethnicity and  vaccine hesitancy
+
+# Future analysis
+
+I plan to present a summary of county-wise vaccine estimate based on race and ethnicity. I will plot some graphs (box-plot, scatter plot). I am also planning to do some regression analysis too
 
 
 
