@@ -100,32 +100,134 @@ _As applicable, explain where and how you got the data. If you directly import t
 
 ## Data import and cleaning
 _Write code that reads in the file and cleans it so it's ready for analysis. Since this will be fairly long code for most datasets, it might be a good idea to have it in one or several R scripts. If that is the case, explain here briefly what kind of cleaning/processing you do, and provide more details and well documented code somewhere (e.g. as supplement in a paper). All materials, including files that contain code, should be commented well so everyone can follow along._
+```{r}
+library(readxl) #for loading Excel files
+library(dplyr) #for data processing
+library(here) #to set paths
+library(tidyverse)
 
-
-## Exploratory analysis
-
-_Use a combination of text/tables/figures to explore and describe your data. You should produce plots or tables or other summary quantities for the most interesting/important quantities in your data. Depending on the total number of variables in your dataset, explore all or some of the others. FIgures produced here might be histograms or density plots, correlation plots, etc. Tables might summarize your data._
-
-_Continue by creating plots or tables of the outcome(s) of interest and the predictor/exposure/input variables you are most interested in. If your dataset is small, you can do that for all variables. Plots produced here can be scatterplots, boxplots, violinplots, etc. Tables can be simple 2x2 tables or larger ones._
-
-_To get some further insight into your data, if reasonable you could compute simple statistics (e.g. t-tests, simple regression model with 1 predictor, etc.) to look for associations between your outcome(s) and each individual predictor variable. Though note that unless you pre-specified the outcome and main exposure, any "p<0.05 means statistical significance" interpretation is not valid._
-
-Table \@ref(tab:summarytable) shows a table summarizing the data.
-
-
-```{r summarytable,  echo=FALSE}
-resulttable=readRDS("../../results/summarytable.rds")
-knitr::kable(resulttable, caption = 'Data summary table.')
 ```
 
 
-Figure \@ref(fig:resultfigure) shows a scatterplot figure produced by one of the R scripts.
+#path to data
 
-```{r resultfigure,  fig.cap='Analysis figure.', echo=FALSE}
-knitr::include_graphics("../../results/resultfigure.png")
+```{r}
+Covid_data_location <- here::here("data","raw_data","Vaccine_Hesitancy_for_COVID-19.xlsx")
+```
+
+#load data.
+
+```{r}
+rawdata <- readxl::read_excel(Covid_data_location)
 ```
 
 
+#take a look at the data
+
+```{r}
+dplyr::glimpse(rawdata)
+
+
+str(rawdata)
+
+
+summary(rawdata)
+```
+
+#Data cleaning
+
+##renaming Columns
+
+
+```{r}
+rawdata <- rawdata %>%
+    rename(Hispanic = `Percent Hispanic`)
+
+rawdata <- rawdata %>%
+     rename(Asian = `Percent non-Hispanic Asian`)
+
+ rawdata <- rawdata %>%
+    rename(Black =`Percent non-Hispanic Black`)
+
+ rawdata <- rawdata %>%
+    rename(White ='Percent non-Hispanic White')
+ 
+##Recoding Data
+ 
+ 
+ rawdata <- rawdata %>%
+    mutate(`SVI Category` = case_when(`SVI Category`=="Very Low Vulnerability" ~ 1,
+                                      `SVI Category`=="Low Vulnerability" ~ 2,
+                                      `SVI Category`=="Moderate Vulnerability" ~ 3,
+                                      `SVI Category`=="High Vulnerability" ~ 4,
+                                      `SVI Category`=="Very High Vulnerability" ~ 5))
+ 
+ 
+ 
+ rawdata <- rawdata %>%
+    mutate( `CVAC Level Of Concern` = case_when( `CVAC Level Of Concern`=="Very Low Concern" ~ 1,
+                                                 `CVAC Level Of Concern`=="Low Concern" ~ 2,
+                                                 `CVAC Level Of Concern`=="Moderate Concern" ~ 3,
+                                                 `CVAC Level Of Concern`=="High Concern" ~ 4,
+                                                 `CVAC Level Of Concern`=="Very High Concern" ~ 5))
+ 
+
+```
+
+
+##Creating new variables for Ease
+```{r}
+Northeast_state_data <- rawdata %>% dplyr::filter(State %in% c("MAINE", "NEW HAMPSHIRE", "VERMONT","MASSACHUSETTS","RHODE ISLAND","CONNECTICUT","NEW YORK","NEW JERSEY","PENNSYLVANIA" ))
+ 
+## Cross_Check
+Northeast_state_data 
+ 
+
+Midwest_state_data <- rawdata %>% dplyr::filter(State %in% c("OHIO", "MICHIGAN", "INDIANA","WISCONSIN","ILLINOIS","MINNESOTA","IOWA","MISSOURI","NORTH DAKOTA","SOUTH DAKOTA","NEBRASKA","KANSAS" ))
+ 
+## Cross_Check
+
+Midwest_state_data 
+ 
+
+South_state_data <- rawdata %>% dplyr::filter(State %in% c("DELAWARE", "MARYLAND", "VIRGINIA"," WEST VIRGINIA","KENTUCKY","NORTH CAROLINA","SOUTH CAROLINA","TENNESSEE","GEORGIA","FLORIDA","ALABAMA","MISSISSIPPI","Arkansas","LOUISIANA","TEXAS","OKLAHOMA","WASHINGTON"))
+
+
+## Cross_Check
+South_state_data
+  
+
+West_state_data <- rawdata %>% dplyr::filter(State %in% c("MONTANA", "IDAHO", "WYOMING"," COLORADO","NEW MEXICO","ARIZONA","UTAH","NEVADA","CALIFORNIA","OREGON","ALASKA","HAWAII"))
+
+## Cross_Check
+
+West_state_data
+
+```
+
+
+
+##SCatter plot between STATE and percent fully vaccinated
+
+```{r}
+p1 <- West_state_data %>% ggplot(aes(x= State, y=`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`)) + geom_point(color="red") + geom_smooth(method='lm', color="black") + labs(title= "Scatterplot of West vs  fully vaccinated", subtitle = ("All Counties,west")) + xlab("west STATES") +  ylab("Percent adults fully vaccinated") + theme_classic()
+
+print(p1)
+
+p2 <- Midwest_state_data %>% ggplot(aes(x= State, y=`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`)) + geom_point(color="blue") + geom_smooth(method='lm', color="black") + labs(title= "Scatterplot of Midwest vs  fully vaccinated", subtitle = ("All Counties, Midwest")) + xlab("Midwest STATES") +  ylab("Percent adults fully vaccinated") + theme_classic()
+
+print(p2)
+
+
+p3 <- South_state_data %>% ggplot(aes(x= State, y=`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`)) + geom_point(color="purple") + geom_smooth(method='lm', color="black") + labs(title= "Scatterplot of South states vs  fullyvaccinated", subtitle = ("All Counties, SOUTH")) + xlab("South STATES") +  ylab("Percent adults fully vaccinated") + theme_classic()
+
+
+print(p3)
+
+p4 <- Northeast_state_data %>% ggplot(aes(x= State, y=`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`)) + geom_point(color="green") + geom_smooth(method='lm', color="black") + labs(title= "Scatterplot of NOrtheast states vs  fullyvaccinated", subtitle = ("All Counties, NOrtheast")) + xlab("NORTHEAST STATES") +  ylab("Percent adults fully vaccinated") + theme_classic()
+
+print(p4)
+```
 ## Full analysis
 
 _Use one or several suitable statistical/machine learning methods to analyze your data and to produce meaningful figures, tables, etc. This might again be code that is best placed in one or several separate R scripts that need to be well documented. You want the code to produce figures and data ready for display as tables, and save those. Then you load them here._
