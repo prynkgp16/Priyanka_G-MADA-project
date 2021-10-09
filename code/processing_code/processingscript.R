@@ -12,7 +12,8 @@ library(tidyverse)
 
 #path to data
 #note the use of the here() package and not absolute paths
-Covid_data_location <- here::here("data","raw_data","Vaccine_Hesitancy_for_COVID-19.xlsx")
+
+  Covid_data_location <- here::here("data","raw_data","Vaccine_Hesitancy_for_COVID-19.xlsx")
 
 #load data. 
 #note that for functions that come from specific packages (instead of base R)
