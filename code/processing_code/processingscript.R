@@ -97,50 +97,7 @@ West_state_data
 
 
 
-##BAR Charts
 
-B1 <- Northeast_state_data %>% ggplot(aes(x=`SVI Category`, fill=`SVI Category`)) + geom_bar() +
-  +     labs(title= "Bar Chart of Frequency of Counties by SVI category (NOrtheast") + xlab("SVI CATEGORY") +  ylab("Count") + theme_classic()
-
-print(B1)
-
-
-B2 <- Midwest_state_data %>% ggplot(aes(x=`SVI Category`, fill=`SVI Category`)) + geom_bar() +
-  +     labs(title= "Bar Chart of Frequency of Counties by SVI category (MIDWEST)") + xlab("SVI Category") +  ylab("Count") + theme_classic()
-
-
-print(B2)
-
-
-B3 <- West_state_data %>% ggplot(aes(x=`SVI Category`, fill=`SVI Category`)) + geom_bar() +
-  +     labs(title= "Bar Chart of Frequency of Counties by SVI category (WEST)") + xlab("SVI Category") +  ylab("Count") + theme_classic()
-
-print(B3)
-
-B4 <- South_state_data %>% ggplot(aes(x=`SVI Category`, fill=`SVI Category`)) + geom_bar() +
-  +  labs(title= "Bar Chart of Frequency of Counties by SVI category (SOUTH)") + xlab("SVI Category") +  ylab("Count") + theme_classic()
-
-print(B4)
-
-##SCatter plot between STATE and percent fully vaccinated
-
-p1 <- West_state_data %>% ggplot(aes(x= State, y=`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`)) + geom_point(color="red") + geom_smooth(method='lm', color="black") + labs(title= "Scatterplot of West vs  fully vaccinated", subtitle = ("All Counties,west")) + xlab("west STATES") +  ylab("Percent adults fully vaccinated") + theme_classic()
-
-print(p1)
-
-p2 <- Midwest_state_data %>% ggplot(aes(x= State, y=`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`)) + geom_point(color="blue") + geom_smooth(method='lm', color="black") + labs(title= "Scatterplot of Midwest vs  fully vaccinated", subtitle = ("All Counties, Midwest")) + xlab("Midwest STATES") +  ylab("Percent adults fully vaccinated") + theme_classic()
-
-print(p2)
-
-
-p3 <- South_state_data %>% ggplot(aes(x= State, y=`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`)) + geom_point(color="purple") + geom_smooth(method='lm', color="black") + labs(title= "Scatterplot of South states vs  fullyvaccinated", subtitle = ("All Counties, SOUTH")) + xlab("South STATES") +  ylab("Percent adults fully vaccinated") + theme_classic()
-
-
-print(p3)
-
-p4 <- Northeast_state_data %>% ggplot(aes(x= State, y=`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`)) + geom_point(color="green") + geom_smooth(method='lm', color="black") + labs(title= "Scatterplot of NOrtheast states vs  fullyvaccinated", subtitle = ("All Counties, NOrtheast")) + xlab("NORTHEAST STATES") +  ylab("Percent adults fully vaccinated") + theme_classic()
-
-print(p4)
 
 # location to save file
 save_data_location <- here::here("data","processed_data","processeddata.rds")
