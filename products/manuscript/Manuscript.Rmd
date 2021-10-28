@@ -175,6 +175,11 @@ rawdata <- rawdata %>%
 ```
 
 
+
+
+
+
+
 ##Creating new variables for Ease
 ```{r}
 Northeast_state_data <- rawdata %>% dplyr::filter(State %in% c("MAINE", "NEW HAMPSHIRE", "VERMONT","MASSACHUSETTS","RHODE ISLAND","CONNECTICUT","NEW YORK","NEW JERSEY","PENNSYLVANIA" ))
@@ -203,6 +208,33 @@ West_state_data <- rawdata %>% dplyr::filter(State %in% c("MONTANA", "IDAHO", "W
 
 West_state_data
 
+```
+
+
+##BAR Charts
+```{r}
+B1 <- Northeast_state_data %>% ggplot(aes(x=`SVI Category`, fill=`SVI Category`)) + geom_bar() +
+       labs(title= "Bar Chart of Frequency of Counties by SVI category (NOrtheast") + xlab("SVI CATEGORY") +  ylab("Count") + theme_classic()
+
+print(B1)
+
+
+B2 <- Midwest_state_data %>% ggplot(aes(x=`SVI Category`, fill=`SVI Category`)) + geom_bar() +
+      labs(title= "Bar Chart of Frequency of Counties by SVI category (MIDWEST)") + xlab("SVI Category") +  ylab("Count") + theme_classic()
+
+
+print(B2)
+
+
+B3 <- West_state_data %>% ggplot(aes(x=`SVI Category`, fill=`SVI Category`)) + geom_bar() +
+      labs(title= "Bar Chart of Frequency of Counties by SVI category (WEST)") + xlab("SVI Category") +  ylab("Count") + theme_classic()
+
+print(B3)
+
+B4 <- South_state_data %>% ggplot(aes(x=`SVI Category`, fill=`SVI Category`)) + geom_bar() +
+    labs(title= "Bar Chart of Frequency of Counties by SVI category (SOUTH)") + xlab("SVI Category") +  ylab("Count") + theme_classic()
+
+print(B4)
 ```
 
 
