@@ -94,10 +94,51 @@ West_state_data <- rawdata %>% dplyr::filter(State %in% c("MONTANA", "IDAHO", "W
 
 West_state_data
 
+##Top 10 counties with highest percent of fully vaccincated adults
+
+##West states
+
+West_state_top_10 <- head( West_state_data[order( West_state_data$`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`),], 10)
+
+West_state_top_10
 
 
+## South States
+
+South_top_10 <- head( South_state_data[order( South_state_data$`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`),], 10)
+ 
+South_top_10
+
+## Midwest States
+
+Midwest_top_10 <- head( Midwest_state_data[order( Midwest_state_data$`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`),], 10)
+
+Midwest_top_10
+
+## Northeast States
+
+NOrtheast_top_10 <- head( Northeast_state_data[order( Northeast_state_data$`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`),], 10) 
+
+NOrtheast_top_10
 
 
+##DATA with Race for Every region
+
+  
+Midwest_race <-Midwest_state_data %>% count(Hispanic,Asian,Black,White,State,`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`,`Social Vulnerability Index (SVI)`)
+
+Midwest_race
+
+NOrtheast_race <-Northeast_state_data %>% count(Hispanic,Asian,Black,White,State,`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`,`Social Vulnerability Index (SVI)`)
+NOrtheast_race
+
+South_race <-South_state_data %>% count(Hispanic,Asian,Black,White,State,`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`,`Social Vulnerability Index (SVI)`)
+
+South_race
+
+West_race <-West_state_data %>% count(Hispanic,Asian,Black,White,State,`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)`,`Social Vulnerability Index (SVI)`)
+
+West_race
 
 # location to save file
 save_data_location <- here::here("data","processed_data","processeddata.rds")
