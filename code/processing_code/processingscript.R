@@ -141,8 +141,8 @@ West_race <-West_state_data %>% count(Hispanic,Asian,Black,White,State,`Percent 
 West_race
 
 # location to save file
-save_data_location <- here::here("data","processed_data","processeddata.rds")
+save_data_location <- here::here("data","Covid_data_location","Covid_data_location.rds")
 
-saveRDS(processeddata, file = save_data_location)
+saveRDS(Covid_data_location, file = save_data_location)
 
 
