@@ -257,9 +257,204 @@ lmtable <- broom::tidy(lmfit1)
 #look at fit results
 print(lmtable)
 
+
+lmfit2 <- lm(`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)` ~ `White`+ `Asian` + `Black` + `Hispanic` ,South_race)
+
+
+# place results from fit into a data frame with the tidy function
+lmtable2 <- broom::tidy(lmfit2)
+
+#look at fit results
+print(lmtable2)
+
+
+lmfit3 <- lm(`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)` ~ `White`+ `Asian` + `Black` + `Hispanic` ,Midwest_race)
+
+
+# place results from fit into a data frame with the tidy function
+lmtable3 <- broom::tidy(lmfit3)
+
+#look at fit results
+print(lmtable3)
+
+
+lmfit4 <- lm(`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)` ~ `White`+ `Asian` + `Black` + `Hispanic` ,West_race)
+
+
+# place results from fit into a data frame with the tidy function
+lmtable4 <- broom::tidy(lmfit4)
+
+#look at fit results
+print(lmtable4)
+
 # save fit results table  
 table_file = here("results", "resulttable.rds")
 saveRDS(lmtable, file = table_file)
 
+table_file1 = here("results", "resulttable.rds")
+saveRDS(lmtable2, file = table_file1)
 
-  
+
+table_file2 = here("results", "resulttable.rds")
+saveRDS(lmtable3, file = table_file2)
+
+
+table_file3 = here("results", "resulttable.rds")
+saveRDS(lmtable4, file = table_file3)
+
+
+
+data_split <- initial_split(rawdata, prop = 3/4)
+
+train_data <- training(data_split)
+ 
+test_data  <- testing(data_split)
+
+
+# 5-fold cross-validation
+
+fold_5_data<- vfold_cv(train_data, v = 5, repeats = 5)
+
+# Creating a recipe 
+
+rec1 <- recipe(`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)` ~ ., data = train_data)
+
+rec1
+
+#Null model performance
+
+# Creates a recipe that fits null model
+
+rec_null <- recipe(`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)` ~  1 , data = train_data)
+
+
+
+
+#Build a model specification
+
+
+lm_mod <- linear_reg() %>%
+  set_engine("lm")
+
+
+
+# Null Model Workflow
+
+null_wflow <-
+  workflow() %>% 
+  add_model(lm_mod) %>% 
+  add_recipe(rec_null)
+
+
+
+null_fit<-
+  null_wflow %>%
+  fit(data = train_data )
+
+
+
+
+# Predictions based on null model
+
+prediction_train<-predict(null_fit, train_data)
+prediction_test <-predict(null_fit, test_data)
+prediction_train
+prediction_test
+
+
+
+
+tune_spec <- 
+  decision_tree(
+    cost_complexity = tune(),
+    tree_depth = tune()
+  ) %>% 
+  set_engine("rpart") %>% 
+  set_mode("regression")
+
+
+
+
+
+
+##1) model specification,
+##2) workflow definition, 
+##3) tuning grid specification and 
+##4) tuning using cross-validation and the tune_grid() function
+
+
+##1) model specification
+
+
+tune_spec <- 
+  decision_tree(
+    cost_complexity = tune(),
+    tree_depth = tune()
+  ) %>% 
+  set_engine("rpart") %>% 
+  set_mode("regression")
+
+#Tune grid specification:
+
+tree_grid <-
+  grid_regular(cost_complexity(),
+               tree_depth(),
+               levels = 5)
+
+
+tree_grid
+
+
+tree_workflow <- workflow() %>%
+      add_model(tune_spec) %>%
+       add_recipe(rec1)
+
+
+tree_res <- tree_workflow %>%
+       tune::tune_grid(resamples = fold_5_data,
+                                           grid = tree_grid,
+                                            control = control_grid(verbose = FALSE, save_pred = TRUE),                                    metrics = metric_set(rmse))
+
+
+##The function collect_metrics() gives us a tidy tibble with all the results
+
+
+tree_res %>% 
+  collect_metrics()
+
+
+
+
+tree_res %>% autoplot()
+
+
+#Pull out the single set of hyperparameter values for our best decision tree model
+
+best_tree <- tree_res %>%
+     select_best("rmse")
+
+
+best_tree
+
+
+##Finalize Model
+
+
+final_wf <- 
+  tree_workflow %>% 
+  finalize_workflow(best_tree)
+
+
+final_wf
+
+
+##fit this final model to the training data and use our test data to estimate the model performance
+
+
+final_fit <- 
+  final_wf %>%
+  last_fit(data_split)
+
+
+final_fit %>%
+  collect_metrics()
