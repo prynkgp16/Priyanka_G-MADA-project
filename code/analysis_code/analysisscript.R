@@ -257,6 +257,10 @@ lmtable <- broom::tidy(lmfit1)
 #look at fit results
 print(lmtable)
 
+#Save table
+save_data_location <- here::here("results","lmtable.rds")
+saveRDS(lmtable, file = save_data_location)
+
 
 lmfit2 <- lm(`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)` ~ `White`+ `Asian` + `Black` + `Hispanic` ,South_race)
 
@@ -268,6 +272,10 @@ lmtable2 <- broom::tidy(lmfit2)
 print(lmtable2)
 
 
+#Save table
+save_data_location <- here::here("results","lmtable2.rds")
+saveRDS(lmtable2, file = save_data_location)
+
 lmfit3 <- lm(`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)` ~ `White`+ `Asian` + `Black` + `Hispanic` ,Midwest_race)
 
 
@@ -278,6 +286,10 @@ lmtable3 <- broom::tidy(lmfit3)
 print(lmtable3)
 
 
+#Save table
+save_data_location <- here::here("results","lmtable3.rds")
+saveRDS(lmtable3, file = save_data_location)
+
 lmfit4 <- lm(`Percent adults fully vaccinated against COVID-19 (as of 6/10/21)` ~ `White`+ `Asian` + `Black` + `Hispanic` ,West_race)
 
 
@@ -286,6 +298,12 @@ lmtable4 <- broom::tidy(lmfit4)
 
 #look at fit results
 print(lmtable4)
+
+
+#Save table
+save_data_location <- here::here("results","lmtable4.rds")
+saveRDS(lmtable4, file = save_data_location)
+
 
 # save fit results table  
 table_file = here("results", "resulttable.rds")

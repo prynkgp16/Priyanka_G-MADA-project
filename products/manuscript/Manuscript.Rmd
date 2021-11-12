@@ -1,7 +1,7 @@
 ---
-title: "Example Manuscript Template for a Data Analysis Project"
+title: "Vaccine Hesitancy for COVID-19"
 subtitle: ""
-author: Andreas Handel
+author: Priyanka gannavarapu
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: article
@@ -15,18 +15,6 @@ bibliography: ../references.bib
 csl: ../apa.csl
 ---
 
-
-
-```{r}
-
-
-
-#Loading required packages
-library(dplyr) #for data processing
-library(here) #to set paths
-library(tidyverse) #all required data manipulation packages
-
-```
 
 
 # Summary/Abstract
@@ -60,7 +48,8 @@ _Describe what the data is, what it contains, where it is from, etc. Eventually 
 
 The dataset used for this analysis is publicly available on CDC website. https://data.cdc.gov/Vaccinations/Vaccine-Hesitancy-for-COVID-19-County-and-local-es/q9mh-h2tw
 
-The SVI index at the county level using the Public Use Microdata Sample (PUMS). The data was collected by utilizing survey question. The SVI index is categorised into 
+Social Vulnerability Index
+Overall social vulnerability index was obtained from the 2018 CDC Social Vulnerability Index.  The CDC's Social Vulnerability Index (SVI) summarizes the extent to which a community is socially vulnerable to disaster. The factors considered in developing the SVI include economic data as well as data regarding education, family characteristics, housing language ability, ethnicity, and vehicle access. SVI values range from 0 (least vulnerable) to 1 (most vulnerable). The SVI can also be categorized as follows: 
 
 1) Very Low (0.0-0.19);
 2) Low (0.20-0.39); 
@@ -69,13 +58,21 @@ The SVI index at the county level using the Public Use Microdata Sample (PUMS). 
 5) Very High (0.80-1.0). 
 
 
-CVAC Level Of Concern
+![](C:\Users\Priyanka\Desktop\new\Priyanka_G-MADA-project/svi.jpg)
+
+COVID-19 Vaccine Coverage Index
+
+The Surgo Covid-19 Vaccine Coverage Index (CVAC) captures supply- and demand-related challenges that may hinder rapid, widespread COVID-19 vaccine coverage in U.S. counties, through five specific themes: historic undervaccination, sociodemographic barriers, resource-constrained healthcare system, healthcare accessibility barriers, and irregular care-seeking behaviors. The CVAC measures the level of concern for a difficult rollout on a range from 0 (lowest concern) to 1 (highest concern).The CVAC Index can also be categorized as follows:
+
+  
 1) Very Low (0.0-0.19);
 2) Low (0.20-0.39); 
 3) Moderate (0.40-0.59); 
 4) High (0.60-0.79); 
 5) Very High (0.80-1.0). 
 
+
+![](C:\Users\Priyanka\Desktop\new\Priyanka_G-MADA-project/cvac.jpg)
 
 ## Questions/Hypotheses to be addressed
 _State the research questions you plan to answer with this analysis._
@@ -105,11 +102,15 @@ _As applicable, explain where and how you got the data. If you directly import t
 
 ##BAR Charts
 
+##                        Figure 1
+
 ##Bar Chart of Frequency of Northeast states by SVI category  
 
 ```{r Northeast_state_data,  fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/Northeast_SVI_Bar.png")
 ```
+
+##                        Figure 2
 
 ##Bar Chart of Frequency of Midwest states by SVI category  
 
@@ -117,11 +118,16 @@ knitr::include_graphics("../../results/Northeast_SVI_Bar.png")
 knitr::include_graphics("../../results/Midwest_SVI_Bar.png")
 ```
 
+##                        Figure 3
+
 ##Bar Chart of Frequency of West states by SVI category  
 
 ```{r West_state_data,  fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/West_SVI_Bar.png")
 ```
+
+
+##                        Figure 4
 
 ##Bar Chart of Frequency of South states by SVI category  
 
@@ -132,11 +138,17 @@ knitr::include_graphics("../../results/South_SVI_Bar.png")
 
 ##SCatter plot between STATE and percent fully vaccinated (Top 10 counties)
 
+
+##                        Figure 5
+
 ## TOP 10 counties in west states v percent fully vaccinated
 
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/West_state_top_10.png")
 ```
+
+
+##                        Figure 6
 
 ## TOP 10 counties in Midwest states v percent fully vaccinated
 
@@ -145,12 +157,16 @@ knitr::include_graphics("../../results/West_state_top_10.png")
 knitr::include_graphics("../../results/Midwest_top_10.png")
 ```
 
+##                        Figure 7
+
 ## TOP 10 counties in South states v percent fully vaccinated
 
 
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/South_top_10.png")
 ```
+
+##                        Figure 8
 
 ## TOP 10 counties in NOrtheast states v percent fully vaccinated
 
@@ -161,19 +177,34 @@ knitr::include_graphics("../../results/NOrtheast_top_10.png")
 
 ## Comparing ethinicity in percent fully vaccincated in all US regions
 
+
+
+
+
 ##Northeast Vs ethinicity
+
+##                        Figure 9
 
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/Northeast_hispanic.png")
 ```
 
+
+##                        Figure 10
+
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/Northeast_asian.png")
 ```
 
+
+##                        Figure 11
+
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/Northeast_Black.png")
 ```
+
+
+##                        Figure 12
 
 ```{r  fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/Northeast_White.png")
@@ -182,17 +213,27 @@ knitr::include_graphics("../../results/Northeast_White.png")
 
 ##Midwest Vs ethinicity
 
+
+##                        Figure 13
+
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/Midwest_hispanic.png")
 ```
+
+
+##                        Figure 14
 
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/Midwest_asian.png")
 ```
 
+##                        Figure 15
+
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/Midwest_Black.png")
 ```
+
+##                        Figure 16
 
 ```{r  fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/Midwest_White.png")
@@ -201,17 +242,28 @@ knitr::include_graphics("../../results/Midwest_White.png")
 
 ##South states Vs ethinicity
 
+
+##                        Figure 17
+
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/South_hispanic.png")
 ```
+
+##                        Figure 18
 
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/South_asian.png")
 ```
 
+
+##                        Figure 19
+
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/South_Black.png")
 ```
+
+
+##                        Figure 20
 
 ```{r  fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/South_White.png")
@@ -219,21 +271,37 @@ knitr::include_graphics("../../results/South_White.png")
 
 ##West states Vs ethinicity
 
+##                        Figure 21
+
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/West_hispanic.png")
 ```
+
+
+##                        Figure 22
+
 
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/West_asian.png")
 ```
 
+
+##                        Figure 23
+
+
 ```{r   fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/West_Black.png")
 ```
 
+
+##                        Figure 24
+
+
 ```{r  fig.cap='', echo=FALSE}
 knitr::include_graphics("../../results/West_White.png")
 ```
+
+
 ## Full analysis
 
 # fit linear model
@@ -250,14 +318,19 @@ knitr::kable(resulttable, caption = 'Linear model fit table.')
 
 # Discussion
 
-## Summary and Interpretation
-_Summarize what you did, what you found and what it means._
+The US COVID-19 vaccination program prioritizes ensuring fair COVID-19 vaccine access. Immunization coverage was lower in high-vulnerability areas across the country, indicating that more work is needed to ensure equity in vaccination coverage for those most affected by COVID-19 (3). COVID-19 vaccine coverage must be improved in communities with high proportions of racial/ethnic minority groups and those who are economically and socially marginalized, because COVID-19–related illness and mortality have disproportionately affected these populations.Monitoring community-level measurements is crucial for developing personalized, local vaccine delivery strategies that could help to eliminate disparities. Access concerns (e.g., vaccine supply, vaccination clinic availability, and lack of prioritizing of vulnerable populations) or other challenges, such as vaccine hesitancy, might be investigated by public health officials. Vaccination promotion, outreach, and administration may be concentrated in counties with high sensitivity populations (e.g., providing resources to federally qualified health centers when socioeconomic disparities are identified).
 
-## Strengths and Limitations
-_Discuss what you perceive as strengths and limitations of your analysis._
+For the socioeconomic status variables (i.e., poverty, unemployment, low income, and no high school diploma), vaccination coverage was consistently lower in high vulnerability counties than in low vulnerability counties; the coverage discrepancy was greatest for the education indicator. However, for the indicators relating to the percentages of people who speak English poorly and people with disabilities, equal vaccination coverage was observed in counties with low and high social vulnerability, which is encouraging given the disproportionate incidence of COVID-19 in these populations.
+
+COVID-19 immunization coverage differed by state. In most states, low vulnerability counties had more coverage than high vulnerability counties. Despite this, states like Arizona and Montana have higher vaccination coverage in high-risk areas based on SVI indicators. In states with high equity, practices included: 1) prioritizing people from racial/ethnic minority groups during the early stages of vaccine program implementation, 2) actively monitoring and addressing barriers to vaccination in vulnerable communities, 3) directing vaccines to vulnerable communities, 4) providing free transportation to vaccination sites, and 5) collaborating with community partners, tribal health organizations, and the Indian Health Service.
+
+##  Limitations
+In each state, specific populations were prioritized for vaccination; the disparities seen could be attributed to prioritizing based on age, occupational exposures, and underlying health issues.
+
+Vulnerabilities and vaccine coverage rates may differ by county; state and municipal governments may prioritize immunization efforts for high risk communities in smaller geographic entities.
 
 ## Conclusions
-_What are the main take-home messages?_
+COVID-19 vaccination coverage was lower in high exposure counties than in low vulnerability counties, according to the findings, which was mostly due to socioeconomic discrepancies. As vaccine supplies grow and administration expands to more priority groups, the CDC, states, and local governments should continue to track vaccination rates using SVI metrics to aid in the development of community-based efforts to improve vaccination access, outreach, and administration among COVID-19-affected populations.
 
 _Include citations in your Rmd file using bibtex, the list of references will automatically be placed at the end_
 
