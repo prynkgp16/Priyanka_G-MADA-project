@@ -9,6 +9,7 @@ library(ggplot2) #for plotting
 library(broom) #for cleaning up output from lm()
 library(here)#for data loading/saving
 library(dplyr)
+library(tidymodels)
 
 #path to data
 save_data_location <- here::here("data","processed_data","processeddata.rds")
