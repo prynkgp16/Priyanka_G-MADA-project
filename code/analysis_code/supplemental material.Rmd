@@ -1,0 +1,171 @@
+---
+title: "Supplemental Material"
+author: "priyanka"
+date: "11/28/2021"
+output: html_document
+---
+##SCatter plot between STATE and percent fully vaccinated (Top 10 counties)
+
+
+##                        Figure 5
+
+## TOP 10 counties in west states v percent fully vaccinated
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/West_state_top_10.png")
+```
+
+
+##                        Figure 6
+
+## TOP 10 counties in Midwest states v percent fully vaccinated
+
+
+```{r  fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/Midwest_top_10.png")
+```
+
+##                        Figure 7
+
+## TOP 10 counties in South states v percent fully vaccinated
+
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/South_top_10.png")
+```
+
+##                        Figure 8
+
+## TOP 10 counties in NOrtheast states v percent fully vaccinated
+
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/NOrtheast_top_10.png")
+```
+
+## Comparing ethinicity in percent fully vaccincated in all US regions
+
+
+
+
+
+##Northeast Vs ethinicity
+
+##                        Figure 9
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/Northeast_hispanic.png")
+```
+
+
+##                        Figure 10
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/Northeast_asian.png")
+```
+
+
+##                        Figure 11
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/Northeast_Black.png")
+```
+
+
+##                        Figure 12
+
+```{r  fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/Northeast_White.png")
+```
+
+
+##Midwest Vs ethinicity
+
+
+##                        Figure 13
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/Midwest_hispanic.png")
+```
+
+
+##                        Figure 14
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/Midwest_asian.png")
+```
+
+##                        Figure 15
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/Midwest_Black.png")
+```
+
+##                        Figure 16
+
+```{r  fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/Midwest_White.png")
+```
+
+
+##South states Vs ethinicity
+
+
+##                        Figure 17
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/South_hispanic.png")
+```
+
+##                        Figure 18
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/South_asian.png")
+```
+
+
+##                        Figure 19
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/South_Black.png")
+```
+
+
+##                        Figure 20
+
+```{r  fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/South_White.png")
+```
+
+##West states Vs ethinicity
+
+##                        Figure 21
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/West_hispanic.png")
+```
+
+
+##                        Figure 22
+
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/West_asian.png")
+```
+
+
+##                        Figure 23
+
+
+```{r   fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/West_Black.png")
+```
+
+
+##                        Figure 24
+
+
+```{r  fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/West_White.png")
+```
+

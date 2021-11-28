@@ -39,7 +39,7 @@ Identify and address barriers to COVID-19 vaccination. Continued monitoring of v
 
 ## General Background Information
 
-Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Coronavirus disease 2019 (COVID-19) was declared a pandemic in March 2020. COVID-19 vaccine is the most sustainable option to manage the current pandemic. However, vaccine hesitancy by even a small subset of the population can undermine the success of this strategy. The Social Vulnerability Index (SVI) is a tool that uses census data to identify and map places where a community may have more difficulty preventing human suffering and financial loss in a disaster.The SVI assesses the extent that 15 known vulnerabilities (indicators) are present within a community and categorizes them into four themes: socioeconomic status, household composition and disability, minority status and language minority and housing type and transportation. Indicators like poverty and transportation can highlight places where people may have difficulty accessing COVID-19 testing, treatment and vaccination
+Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Coronavirus disease 2019 (COVID-19) was declared a pandemic in March 2020. COVID-19 vaccine is the most sustainable option to manage the current pandemic.Since its discovery in February 2020 in the United States (U.S.) [6], community transmission of SARS-COV-2, which causes COVID-19, has resulted in more than 600,000 deaths and 34 million cases across the country [7]. Across demographic characteristics such as age, race and ethnicity, and income, there are considerable variations in COVID-19 incidence [8,9], severity [8,9], mortality [10], as well as in testing and resource allocation [11]. In order to understand the function of social vulnerability in relation to COVID-19, it is necessary to examine the evidence. Evidence indicates that populations suffering higher social vulnerability bear a disproportionate burden of COVID-19 morbidity and mortality [12]. Among other things, disparities in COVID-19 outcomes may be explained by differences in where people live and work [10], a lack of public health initiatives, and limitations to physical distancing, such as the inability to work from home. However, vaccine hesitancy by even a small subset of the population can undermine the success of this strategy. The Social Vulnerability Index (SVI) is a tool that uses census data to identify and map places where a community may have more difficulty preventing human suffering and financial loss in a disaster.The SVI assesses the extent that 15 known vulnerabilities (indicators) are present within a community and categorizes them into four themes: socioeconomic status, household composition and disability, minority status and language minority and housing type and transportation. Indicators like poverty and transportation can highlight places where people may have difficulty accessing COVID-19 testing, treatment and vaccination
 
 
 
@@ -313,7 +313,9 @@ resulttable=readRDS("../../results/resulttable.rds")
 knitr::kable(resulttable, caption = 'Linear model fit table.')
 ```
 
-
+```{r  fig.cap='', echo=FALSE}
+knitr::include_graphics("../../results/tree_plot.png")
+```
 
 
 # Discussion
