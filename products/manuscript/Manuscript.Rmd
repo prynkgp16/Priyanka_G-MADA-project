@@ -18,7 +18,7 @@ csl: ../apa.csl
 
 
 # Summary/Abstract
-In past pandemics, vulnerable populations faced greater disease burden and decreased testing and treatment access.1 As coronavirus disease 2019 (COVID-19) spreads in the USA, concern is growing that even the early stages of this pandemic have disproportionately impacted vulnerable communities.2–4 However, the relationship between social vulnerability and ethnicity remains unknown.
+In past pandemics, vulnerable populations faced greater disease burden and decreased testing and treatment access. As coronavirus disease 2019 (COVID-19) spreads in the USA, concern is growing that even the early stages of this pandemic have disproportionately impacted vulnerable communities. However, the relationship between social vulnerability and ethnicity remains unknown.
 
 # KEY QUESTIONS 
 
@@ -44,12 +44,31 @@ Coronavirus disease (COVID-19) is an infectious disease caused by a newly discov
 
 
 
-## Description of data and data source
-_Describe what the data is, what it contains, where it is from, etc. Eventually this might be part of a methods section._
+## Description of data and data source and aquisition
+
 
 The dataset used for this analysis is publicly available on CDC website. https://data.cdc.gov/Vaccinations/Vaccine-Hesitancy-for-COVID-19-County-and-local-es/q9mh-h2tw
 
+
+The estimates of COVID-19 vaccine hesitancy rates using data from the U.S. Census Bureau’s Household Pulse Survey (HPS) are presented. It estimate hesitancy rates in two steps. First, it estimates hesitancy rates at the state level using the HPS for the collection period May 26, 2021 – June 7, 2021, which is referred to as Week 31. Then, it utilize the estimated values to predict hesitancy rates in more granular areas using the Census Bureau’s 2019 American Community Survey (ACS) 1-year Public Use Microdata Sample (PUMS). To create county-level estimates, they used a PUMA-to-county crosswalk from the Missouri Census Data Center. PUMAs spanning multiple counties had their estimates apportioned across those counties based on overall 2010 Census populations.
+
+
+##How did we get this DATA?
+
+We use the HPS survey question, “Once a vaccine to prevent COVID-19 is available to you, would you…get a vaccine?”, which provides the following options: 1) “definitely get a vaccine”; 2) “probably get a vaccine”; 3) “unsure”; 4) “probably not get a vaccine”; 5) “definitely not get a vaccine.” We use three definitions to capture the strength of hesitancy to receive a vaccine.
+
+      Strongly hesitant: includes only survey responses indicating that they would “definitely not” receive a COVID-19 vaccine when available.
+
+      Hesitant: includes survey responses indicating that they would “probably not” or “definitely not” receive a COVID-19 vaccine when available.
+
+      Hesitant or unsure: includes survey responses indicating that they would “probably not” or “unsure” or “definitely not” receive a COVID-19 vaccine when available.
+
+Full methodology for estimates of COVID-19 vaccine hesitancy is available here.(https://aspe.hhs.gov/reports/vaccine-hesitancy-covid-19-state-county-local-estimates)
+
+Demographic data were obtained from the 2019 American Community Survey (ACS) 5-year estimates.
+
 Social Vulnerability Index
+
 Overall social vulnerability index was obtained from the 2018 CDC Social Vulnerability Index.  The CDC's Social Vulnerability Index (SVI) summarizes the extent to which a community is socially vulnerable to disaster.[@Hughes2021] The factors considered in developing the SVI include economic data as well as data regarding education, family characteristics, housing language ability, ethnicity, and vehicle access. SVI values range from 0 (least vulnerable) to 1 (most vulnerable). The SVI can also be categorized as follows: 
 
 1) Very Low (0.0-0.19);
@@ -76,25 +95,22 @@ The Surgo Covid-19 Vaccine Coverage Index (CVAC) captures supply- and demand-rel
 ![](C:\Users\Priyanka\Desktop\new\Priyanka_G-MADA-project/cvac.jpg)
 
 ## Questions/Hypotheses to be addressed
-_State the research questions you plan to answer with this analysis._
+
 
 The present analysis will attempt to estimate the percent of the population in each county that may be vaccine hesitant
 
 Relationship between ethnicity and  vaccine hesitancy
 
-# Future analysis
+# Data analysis
 
-I plan to present a summary of social vulnerability index based on race and ethnicity. I will plot some graphs (box-plot, scatter plot). I am also planning to do some regression analysis too
-
+Descriptive analysis on the data, producing several tables and plots and full analysis trying several different models (linear, decision tree). We use a test/train split and Cross-Validation for decision tree models. 
 
 
 # Methods and Results
 
-_In most research papers, results and methods are separate. You can combine them here if you find it easier. You are also welcome to structure things such that those are separate sections._
+The primary outcome for this analysis is to estimate the percent of the population in each US region that may be hesitant to get a vaccine and Relationship between ethnicity and social vulnerability index .The estimates of COVID-19 vaccine hesitancy rates using data from the U.S. Census Bureau’s Household Pulse Survey (HPS) are presented. It estimate hesitancy rates in two steps. First, it estimates hesitancy rates at the state level using the HPS for the collection period May 26, 2021 – June 7, 2021
 
 
-## Data aquisition
-_As applicable, explain where and how you got the data. If you directly import the data from an online source, you can combine this section with the next._
 
 ## Data import and cleaning
 
