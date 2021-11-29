@@ -4,6 +4,32 @@ author: "priyanka"
 date: "11/28/2021"
 output: html_document
 ---
+
+##What's in this Dataset?
+
+##Rows
+
+##        3,142
+
+
+##Columns
+
+
+##        21
+
+##Dataset Description
+
+
+![](C:\Users\Priyanka\Desktop\new\Priyanka_G-MADA-project/dataset_desc1.jpg)
+![](C:\Users\Priyanka\Desktop\new\Priyanka_G-MADA-project/dataset_desc.jpg)
+
+
+
+##Supplementary Results
+
+
+
+
 ##SCatter plot between STATE and percent fully vaccinated (Top 10 counties)
 
 
