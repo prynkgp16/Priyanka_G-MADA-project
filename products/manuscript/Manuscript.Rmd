@@ -39,7 +39,8 @@ Identify and address barriers to COVID-19 vaccination. Continued monitoring of v
 
 ## General Background Information
 
-Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Coronavirus disease 2019 (COVID-19) was declared a pandemic in March 2020. COVID-19 vaccine is the most sustainable option to manage the current pandemic.Since its discovery in February 2020 in the United States (U.S.) [6], community transmission of SARS-COV-2, which causes COVID-19, has resulted in more than 600,000 deaths and 34 million cases across the country [7]. Across demographic characteristics such as age, race and ethnicity, and income, there are considerable variations in COVID-19 incidence [8,9], severity [8,9], mortality [10], as well as in testing and resource allocation [11]. In order to understand the function of social vulnerability in relation to COVID-19, it is necessary to examine the evidence. Evidence indicates that populations suffering higher social vulnerability bear a disproportionate burden of COVID-19 morbidity and mortality [12]. Among other things, disparities in COVID-19 outcomes may be explained by differences in where people live and work [10], a lack of public health initiatives, and limitations to physical distancing, such as the inability to work from home. However, vaccine hesitancy by even a small subset of the population can undermine the success of this strategy. The Social Vulnerability Index (SVI) is a tool that uses census data to identify and map places where a community may have more difficulty preventing human suffering and financial loss in a disaster.The SVI assesses the extent that 15 known vulnerabilities (indicators) are present within a community and categorizes them into four themes: socioeconomic status, household composition and disability, minority status and language minority and housing type and transportation. Indicators like poverty and transportation can highlight places where people may have difficulty accessing COVID-19 testing, treatment and vaccination
+Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Coronavirus disease 2019 (COVID-19) was declared a pandemic in March 2020. COVID-19 vaccine is the most sustainable option to manage the current pandemic.Since its discovery in February 2020 in the United States (U.S.) [@Jernigan2020], community transmission of SARS-COV-2, which causes COVID-19, has resulted in more than 600,000 deaths and 34 million cases across the country [CDC
+@COVID Data Tracker]. Across demographic characteristics such as age, race and ethnicity, and income, there are considerable variations in COVID-19 incidence [@Neelon2021,@Li2020], severity [@Neelon2021,@Li2020], mortality [@Chen2020], as well as in testing and resource allocation [@Lewis2020]. In order to understand the function of social vulnerability in relation to COVID-19, it is necessary to examine the evidence. Evidence indicates that populations suffering higher social vulnerability bear a disproportionate burden of COVID-19 morbidity and mortality [@Dasgupta2020]. Among other things, disparities in COVID-19 outcomes may be explained by differences in where people live and work [@Chen2020], a lack of public health initiatives, and limitations to physical distancing, such as the inability to work from home. However, vaccine hesitancy by even a small subset of the population can undermine the success of this strategy. The Social Vulnerability Index (SVI) is a tool that uses census data to identify and map places where a community may have more difficulty preventing human suffering and financial loss in a disaster.The SVI assesses the extent that 15 known vulnerabilities (indicators) are present within a community and categorizes them into four themes: socioeconomic status, household composition and disability, minority status and language minority and housing type and transportation. Indicators like poverty and transportation can highlight places where people may have difficulty accessing COVID-19 testing, treatment and vaccination[@Hughes2021]
 
 
 
@@ -49,7 +50,7 @@ _Describe what the data is, what it contains, where it is from, etc. Eventually 
 The dataset used for this analysis is publicly available on CDC website. https://data.cdc.gov/Vaccinations/Vaccine-Hesitancy-for-COVID-19-County-and-local-es/q9mh-h2tw
 
 Social Vulnerability Index
-Overall social vulnerability index was obtained from the 2018 CDC Social Vulnerability Index.  The CDC's Social Vulnerability Index (SVI) summarizes the extent to which a community is socially vulnerable to disaster. The factors considered in developing the SVI include economic data as well as data regarding education, family characteristics, housing language ability, ethnicity, and vehicle access. SVI values range from 0 (least vulnerable) to 1 (most vulnerable). The SVI can also be categorized as follows: 
+Overall social vulnerability index was obtained from the 2018 CDC Social Vulnerability Index.  The CDC's Social Vulnerability Index (SVI) summarizes the extent to which a community is socially vulnerable to disaster.[@Hughes2021] The factors considered in developing the SVI include economic data as well as data regarding education, family characteristics, housing language ability, ethnicity, and vehicle access. SVI values range from 0 (least vulnerable) to 1 (most vulnerable). The SVI can also be categorized as follows: 
 
 1) Very Low (0.0-0.19);
 2) Low (0.20-0.39); 
@@ -136,172 +137,6 @@ knitr::include_graphics("../../results/South_SVI_Bar.png")
 ```
 
 
-##SCatter plot between STATE and percent fully vaccinated (Top 10 counties)
-
-
-##                        Figure 5
-
-## TOP 10 counties in west states v percent fully vaccinated
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/West_state_top_10.png")
-```
-
-
-##                        Figure 6
-
-## TOP 10 counties in Midwest states v percent fully vaccinated
-
-
-```{r  fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/Midwest_top_10.png")
-```
-
-##                        Figure 7
-
-## TOP 10 counties in South states v percent fully vaccinated
-
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/South_top_10.png")
-```
-
-##                        Figure 8
-
-## TOP 10 counties in NOrtheast states v percent fully vaccinated
-
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/NOrtheast_top_10.png")
-```
-
-## Comparing ethinicity in percent fully vaccincated in all US regions
-
-
-
-
-
-##Northeast Vs ethinicity
-
-##                        Figure 9
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/Northeast_hispanic.png")
-```
-
-
-##                        Figure 10
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/Northeast_asian.png")
-```
-
-
-##                        Figure 11
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/Northeast_Black.png")
-```
-
-
-##                        Figure 12
-
-```{r  fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/Northeast_White.png")
-```
-
-
-##Midwest Vs ethinicity
-
-
-##                        Figure 13
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/Midwest_hispanic.png")
-```
-
-
-##                        Figure 14
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/Midwest_asian.png")
-```
-
-##                        Figure 15
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/Midwest_Black.png")
-```
-
-##                        Figure 16
-
-```{r  fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/Midwest_White.png")
-```
-
-
-##South states Vs ethinicity
-
-
-##                        Figure 17
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/South_hispanic.png")
-```
-
-##                        Figure 18
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/South_asian.png")
-```
-
-
-##                        Figure 19
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/South_Black.png")
-```
-
-
-##                        Figure 20
-
-```{r  fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/South_White.png")
-```
-
-##West states Vs ethinicity
-
-##                        Figure 21
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/West_hispanic.png")
-```
-
-
-##                        Figure 22
-
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/West_asian.png")
-```
-
-
-##                        Figure 23
-
-
-```{r   fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/West_Black.png")
-```
-
-
-##                        Figure 24
-
-
-```{r  fig.cap='', echo=FALSE}
-knitr::include_graphics("../../results/West_White.png")
-```
-
-
 ## Full analysis
 
 # fit linear model
@@ -320,11 +155,11 @@ knitr::include_graphics("../../results/tree_plot.png")
 
 # Discussion
 
-The US COVID-19 vaccination program prioritizes ensuring fair COVID-19 vaccine access. Immunization coverage was lower in high-vulnerability areas across the country, indicating that more work is needed to ensure equity in vaccination coverage for those most affected by COVID-19 (3). COVID-19 vaccine coverage must be improved in communities with high proportions of racial/ethnic minority groups and those who are economically and socially marginalized, because COVID-19–related illness and mortality have disproportionately affected these populations.Monitoring community-level measurements is crucial for developing personalized, local vaccine delivery strategies that could help to eliminate disparities. Access concerns (e.g., vaccine supply, vaccination clinic availability, and lack of prioritizing of vulnerable populations) or other challenges, such as vaccine hesitancy, might be investigated by public health officials. Vaccination promotion, outreach, and administration may be concentrated in counties with high sensitivity populations (e.g., providing resources to federally qualified health centers when socioeconomic disparities are identified).
+The US COVID-19 vaccination program prioritizes ensuring fair COVID-19 vaccine access. Immunization coverage was lower in high-vulnerability areas across the country, indicating that more work is needed to ensure equity in vaccination coverage for those most affected by COVID-19 [@Thakore2021-xf]. COVID-19 vaccine coverage must be improved in communities with high proportions of racial/ethnic minority groups and those who are economically and socially marginalized, because COVID-19–related illness and mortality have disproportionately affected these populations.Monitoring community-level measurements is crucial for developing personalized, local vaccine delivery strategies that could help to eliminate disparities.[@Subramanian2021] Access concerns (e.g., vaccine supply, vaccination clinic availability, and lack of prioritizing of vulnerable populations) or other challenges, such as vaccine hesitancy, might be investigated by public health officials. Vaccination promotion, outreach, and administration may be concentrated in counties with high sensitivity populations (e.g., providing resources to federally qualified health centers when socioeconomic disparities are identified).[@Fletcher2021]
 
-For the socioeconomic status variables (i.e., poverty, unemployment, low income, and no high school diploma), vaccination coverage was consistently lower in high vulnerability counties than in low vulnerability counties; the coverage discrepancy was greatest for the education indicator. However, for the indicators relating to the percentages of people who speak English poorly and people with disabilities, equal vaccination coverage was observed in counties with low and high social vulnerability, which is encouraging given the disproportionate incidence of COVID-19 in these populations.
+For the socioeconomic status variables (i.e., poverty, unemployment, low income, and no high school diploma), vaccination coverage was consistently lower in high vulnerability counties than in low vulnerability counties; the coverage discrepancy was greatest for the education indicator[@Khazanchi2020,@Biggs2021]. However, for the indicators relating to the percentages of people who speak English poorly and people with disabilities, equal vaccination coverage was observed in counties with low and high social vulnerability, which is encouraging given the disproportionate incidence of COVID-19 in these populations.
 
-COVID-19 immunization coverage differed by state. In most states, low vulnerability counties had more coverage than high vulnerability counties. Despite this, states like Arizona and Montana have higher vaccination coverage in high-risk areas based on SVI indicators. In states with high equity, practices included: 1) prioritizing people from racial/ethnic minority groups during the early stages of vaccine program implementation, 2) actively monitoring and addressing barriers to vaccination in vulnerable communities, 3) directing vaccines to vulnerable communities, 4) providing free transportation to vaccination sites, and 5) collaborating with community partners, tribal health organizations, and the Indian Health Service.
+COVID-19 immunization coverage differed by state. In most states, low vulnerability counties had more coverage than high vulnerability counties.[@Islam2021,@Jay2020] Despite this, states like Arizona and Montana have higher vaccination coverage in high-risk areas based on SVI indicators. In states with high equity, practices included: 1) prioritizing people from racial/ethnic minority groups during the early stages of vaccine program implementation, 2) actively monitoring and addressing barriers to vaccination in vulnerable communities, 3) directing vaccines to vulnerable communities, 4) providing free transportation to vaccination sites, and 5) collaborating with community partners, tribal health organizations, and the Indian Health Service.
 
 ##  Limitations
 In each state, specific populations were prioritized for vaccination; the disparities seen could be attributed to prioritizing based on age, occupational exposures, and underlying health issues.
@@ -334,11 +169,6 @@ Vulnerabilities and vaccine coverage rates may differ by county; state and munic
 ## Conclusions
 COVID-19 vaccination coverage was lower in high exposure counties than in low vulnerability counties, according to the findings, which was mostly due to socioeconomic discrepancies. As vaccine supplies grow and administration expands to more priority groups, the CDC, states, and local governments should continue to track vaccination rates using SVI metrics to aid in the development of community-based efforts to improve vaccination access, outreach, and administration among COVID-19-affected populations.
 
-_Include citations in your Rmd file using bibtex, the list of references will automatically be placed at the end_
-
-This paper [@Leek2015a] discusses types of analyses. 
-
-Note that this cited reference will show up at the end of the document, the reference formatting is determined by the CSL file specified in the YAML header. Many more style files for almost any journal [are available](https://www.zotero.org/styles). You also specify the location of your bibtex reference file in the YAML. You can call your reference file anything you like, I just used the generic word `references.bib` but giving it a more descriptive name is probably better.
 
 
 # References
