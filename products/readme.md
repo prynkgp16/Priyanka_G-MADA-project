@@ -1,15 +1,15 @@
-The folders inside this folder should contain all the products of your project.
+Hello. Welcome to my project github.
 
-For a classical academic project, this will be a peer-reviewed manuscript. 
-The `manuscript` folder contains a template. This template is structured as a report for a class, but you can easily adjust it.
+The present analysis will attempt to estimate the percent of the population in each US region that may be heistant to get a vaccine. The analysis also tries to determine the relationship between ethnicity and social vulnerability index
 
-Most manuscripts these days have supplementary material, place those into the `supplement` folder. (I find this structure easier than moving it inside the manuscript folder, but that's personal choice).
+The final draft my project is located in the products tab under the manuscript folder. It includes a more polished draft of the paper with plots and tables and full analysis trying several different models. We use a test/train split and Cross-Validation for decision tree models. If you knit that to HTML, it should reproduce what I did.
 
-Often, you might make slides for an oral presentation, place those in the `slides` folder. 
+HERE ARE THE STEPS TO REPRODUCE MY ANALYSIS
 
-If you make a scientific poster, that should go into the `poster` folder. There are a number of R packages that allow you to make a poster in RMarkdown, see [e.g. this list.
-](https://gist.github.com/Pakillo/4854e5d760351206084f6be8abe476b2)
+Run the processingscript.R located in the processing_code folder. This loads in all the datasets, merges, and cleans them.
 
-You can add further folders. For instance you could have a `website` folder if you plan to write a blog-post or make an interactive shiny-app for your project.  
+Run the analysisscript.R located in the analysis_code folder. This performs descriptive analysis on the data, producing several tables and plots to be used in the manuscript. This runs the full analysis trying several different models (simple, decision tree) and saves different plots and tables needed for the manuscript.
 
-Often you need a library of references in bibtex format, as well as a CSL style file that determines reference formatting. Since those files might be used by several of the products, I'm placing them in the main products folder. Feel free to re-organize.
+ The supplementtarymaterial.rmd contains additional results which are in the form of  plots and graphs.
+ 
+Run the manuscript.Rmd located in the products-> manuscript folder. This document will produce my submission for this part of the project. The reference file is located in the manuscript tab and named bibliography.bibtex. Supplemental_Material.Rmd contains plots and tables mentioned in the main text, but not included.

@@ -1,10 +1,15 @@
-Place your various R or Rmd scripts in the appropriate folders.
+Hello. Welcome to my project github.
 
-You can either have fewer large scripts, or multiple scripts that do only specific actions. Those can be R scripts or Rmd files. In either case, document the scripts and what goes on in them so well that someone else (including future you) can easily figure out what is happening.
+The present analysis will attempt to estimate the percent of the population in each US region that may be heistant to get a vaccine. The analysis also tries to determine the relationship between ethnicity and social vulnerability index
 
-The scripts should load the appropriate data (e.g. raw or processed), perform actions, and save results (e.g. processed data, figures, computed values) in the appropriate folders. Document somewhere what inputs each script takes and where output is placed. 
+The final draft my project is located in the products tab under the manuscript folder. It includes a more polished draft of the paper with plots and tables and full analysis trying several different models. We use a test/train split and Cross-Validation for decision tree models. If you knit that to HTML, it should reproduce what I did.
 
-If scripts need to be run in a specific order, document this. Either as comments in the script, or in a separate text file such as this. Ideally of course in both locations.
+HERE ARE THE STEPS TO REPRODUCE MY ANALYSIS
 
+Run the processingscript.R located in the processing_code folder. This loads in all the datasets, merges, and cleans them.
 
-Depending on your specific project, you might want to have further sub-folders.
+Run the analysisscript.R located in the analysis_code folder. This performs descriptive analysis on the data, producing several tables and plots to be used in the manuscript. This runs the full analysis trying several different models (simple, decision tree) and saves different plots and tables needed for the manuscript.
+
+ The supplementtarymaterial.rmd contains additional results which are in the form of  plots and graphs.
+ 
+Run the manuscript.Rmd located in the products-> manuscript folder. This document will produce my submission for this part of the project. The reference file is located in the manuscript tab and named bibliography.bibtex. Supplemental_Material.Rmd contains plots and tables mentioned in the main text, but not included.
