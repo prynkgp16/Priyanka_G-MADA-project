@@ -40,11 +40,11 @@ rawdata <- rawdata %>%
 rawdata <- rawdata %>%
      rename(Asian = `Percent non-Hispanic Asian`)
 
- rawdata <- rawdata %>%
+rawdata <- rawdata %>%
     rename(Black =`Percent non-Hispanic Black`)
 
  rawdata <- rawdata %>%
-    rename(White ='Percent non-Hispanic White')
+    rename(White =`Percent non-Hispanic White`)
  
 ##Recoding Data
  
