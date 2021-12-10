@@ -114,7 +114,13 @@ The primary outcome for this analysis is to estimate the percent of the populati
 
 ## Data import and cleaning
 
-## Exploratory analysis
+## Descriptive  analysis
+
+Descriptive statistics
+
+After cleaning the data the sample had 3,141 observations which represent each county.. On average, vaccine coverage was approximately 2.1 and 2.9 times higher for the White population relative to the Black and Hispanic populations, respectively. Fewer states reported vaccination data for Asian, American Indian/Alaska Native, and Native Hawaiian/Pacific Islander populations. The figure 1-4 shows the social vulnerability index in all the US regions. Scatter plot between top ten counties in all the US region and percent of fully vaccinated adults in the specific county. These plots are available in supplementary file .
+
+
 
 
 ##BAR Charts
@@ -154,6 +160,13 @@ knitr::include_graphics("../../results/South_SVI_Bar.png")
 
 
 ## Full analysis
+
+Modelling
+
+A variety of continuous and discrete statistics were used to examine the primary outcome, including medians, interquartile ranges, minimums, maximums, and standard deviations (IQRs). With the help of linear regression overlays, we were able to see that the correlation between vaccination rates and linear regression overlays was evident. It was important that we excluded any predictors that were highly linked with our primary variable of interest to rule out collinearity. A total of 75% of all the data was used to train and test the models, while the remaining 25% was used to evaluate the models' ability to correctly predict future outcomes.
+
+Resampling the training data with these specifications and ran a decision tree model on the data, visualizing diagnostics and calculating RMSE for both, was done using a 5-fold cross-validation, 5 times repeated. Based on these charts and metrics, we choose our best match model.
+
 
 # fit linear model
 
