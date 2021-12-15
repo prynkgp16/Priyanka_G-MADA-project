@@ -1,0 +1,186 @@
+---
+title: "alex_peer_review"
+author: "alex"
+date: "12/14/2021"
+output: html_document
+---
+
+# Overview
+
+Title of project:  "Vaccine Hesitancy for COVID-19"
+
+Name of project author(s): Priyanka Gannavarapu
+
+Name of project reviewer: Alexandra Gil
+
+
+# Instructions
+
+Write your comments and feedback below for each section/component of the project. The goal should be to help the author improve their project. Make comments as constructive and actionable as possible. You can provide both criticism and praise.
+
+For each component, pick one summary statement by deleting the ones that do not apply and keeping only the one that you think most closely summarizes a given component. 
+
+Make sure your final document compiles/knits into a readable, well-formatted html document.
+
+Delete any sections/text of this template that are not part of your final review document. (Including these instructions.)
+
+
+# Specific project content evaluation
+Evaluate the different parts of the project by filling in the sections below.
+
+
+## Background, Context and Motivation
+How well is the context of the project described? Is a comprehensive background, including summary of previous/related work given? Is the project well placed into the context of existing work (including proper referencing of existing work). Is it clear why the project was undertaken and what new information it hopes to provide?
+
+### Feedback and Comments
+
+The background provides a complete context about the current issue that is hesitant to get a vaccine and the possible relationship with the social economic status and ethnicity. 
+In my opinion, the Summary/Abstract is not showing the main idea. 
+
+### Summary assessment (PICK ONE, DELETE THE OTHERS)
+
+* strong contextualization and motivation
+
+
+## Question description
+How well and clear are the question(s)/hypotheses the project aims to address described? Is it clear how the questions relate to the data?
+
+
+### Feedback and Comments
+
+The question/intention of the analysis is clear and the data set is clearly oriented to solve the question. Good Job!
+
+### Summary assessment
+
+* question/hypotheses fully clear
+
+
+## Data description
+How well is the data overall described? Is the source provided? Is a codebook or other meta-information available that makes it clear what the data is? 
+
+### Feedback and Comments
+
+The data is well described. Every data source was explained clearly and the categorization provided key information for undertand the data.
+
+### Summary assessment
+
+* source and overall structure of data well explained
+
+
+## Data wrangling and exploratory analysis
+How well is the data cleaned/processed and explored? Are all steps reasonable and well explained? Are alternatives discussed and considered? Are meaningful exploratory results shown (e.g. in the supplementary materials)?
+
+### Feedback and Comments
+Processingscrip.R shows how the data set was cleaned according with the necessity. In analysisscrips shows the exploration of the data set. Plots are always good idea to understand your data set. 
+
+
+### Summary assessment
+
+* essentially no weaknesses in wrangling and exploratory component
+
+
+
+## Appropriateness of Analysis
+Were the analysis methods appropriate for the data? Was the analysis done properly? Were different components of the analysis (e.g. performance measure, variable selection, data pre-processing, model evaluation) done in the best way possible and explained well?
+
+### Feedback and Comments
+
+Could be a good idea explain why you choose decision tree model over others ?.
+The analysis was made according with the workflow studied in class, 
+
+### Summary assessment
+
+* strong and reasonable analysis
+
+## Presentation
+How well are results presented? Are tables and figures easy to read and understand? Are the main figures/tables publication level quality? 
+
+### Feedback and Comments
+
+The analysis presents a good amount of plots and tables for present the outcomes.
+You can plot the final tree using rpart.plot
+
+### Summary assessment
+
+* results are very well presented
+
+
+## Discussion/Conclusions
+Are the study findings properly discussed? Are strengths and limitations acknowledged? Are findings interpreted properly?
+
+### Feedback and Comments
+
+Results are discussed clearly; findings were well interpreted. limitations and conclusion were discused properly. ****As a suggestion: include a sentence in the conclusion about the Vaccine Hesitancy just for "answer" the question.
+
+### Summary assessment
+
+* strong, complete and clear discussion
+
+
+## Further comments
+
+- A plot showing the final tree could be a good outcome. You can plot the final tree using rpart.plot
+- Short context about the selection of decision tree could be interesting.
+- The Summary/Abstract needs some adjustments. You can write a sentence showing conclusions. 
+- Includes some statistical measures in the discussion section would be beneficial.
+
+# Overall project content evaluation
+Overall the project was very clear. It was easy to run. Good Job! 
+
+
+## Structure
+Is the project well structured? Are files in well labeled folders? Do files have reasonable names? Are all "junk" files not needed for analysis/reproduction removed? By just looking at files and folders, can you get an idea of how things fit together?
+
+### Feedback and Comments
+
+The project was very clean, well structured. 
+You can removed from the data folder the file "exampledata.xls"
+
+### Summary assessment
+
+* well structured
+
+
+## Documentation 
+How well is the project documented? Are you able to understand each step of the whole analysis, each decision that was made, and each line of code? Is enough information provided as comments in code or as part of Rmd files? 
+
+### Feedback and Comments
+
+The comments in the code were good. They really provided guidance for code interpretation. 
+
+### Summary assessment
+
+* fully and well documented
+
+
+
+## Reproducibility
+Are all results fully reproducible? Is documentation provided which clearly explains how to reproduce things, and does it work without the need for any manual intervention? Are you able to re-run the whole analysis without having to do manual interventions/edits?
+
+### Feedback and Comments
+
+The code was fully reproducible without any issue!
+
+### Summary assessment
+
+* fully reproducible without issues
+
+
+## Thoroughness
+How thorough was the overall study? Were alternatives (e.g. different ways of processing the data or different models) considered? Were alternatives discussed? Were the questions/hypotheses fully and thoroughly addressed?
+
+### Feedback and Comments
+
+The machine learning model applied was decision tree. No additional comments were provided about why the select this model over others.
+
+The question/intention of the analysis is  attempt to estimate the percent of the population in each US region that may be hesitant to get a vaccine. However, the discussion section mention worlds like "lower" but did not include any value. Also could be a good idea analyse the metrics.
+
+### Summary assessment
+
+* decent level of thoroughness
+
+
+
+## Further comments
+
+Thank you for make this project well structured and very clear!
